@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.header {
+    h3 {
+        color: $color-secondary-1-2;
+    }
+
+    .contact {
+        display: block;
+        padding-top: 1em;
+
+        svg {
+            margin-right: 0.5em;
+        }
+    }
+}
