@@ -1,0 +1,12 @@
+// overriding bootstrap defaults
+
+$primary:       $color-secondary-1-1 !default;
+$success:       $color-primary-2 !default;
+$info:          $color-secondary-1-2 !default;
+$warning:       $color-secondary-2-2 !default;
+$danger:        $color-complement-2 !default;
+
+$nav-tabs-border-color: $color-secondary-1-3;
+$nav-tabs-link-active-color: $color-secondary-1-2;
+$nav-tabs-link-active-bg: $color-secondary-1-3;
+$nav-tabs-link-active-border-color: $color-secondary-1-3;

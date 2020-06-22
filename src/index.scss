@@ -1,5 +1,8 @@
 @import './variables.scss';
 
+// set overrides before importing bootstrap
+@import './variables-bootstrap.scss';
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
@@ -10,6 +13,9 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: $primary;
+}
+.helloworld-container {
     text-align: center;
     background-color: $color-secondary-1-4;
     min-height: 100vh;
@@ -18,7 +24,12 @@ body {
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: $color-secondary-1-1;
+    color: $primary;
+
+    &.helloworld-print {
+        background-color: $white;
+        color: $black;
+    }
 }
 
 code {

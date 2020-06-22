@@ -1,13 +1,15 @@
 @import '../../variables.scss';
 
-.header {
+header {
+    width: 100%;
+
     h3 {
         color: $color-secondary-1-2;
     }
 
     .contact {
         display: block;
-        padding-top: 1em;
+        padding-top: 0.5em;
 
         svg {
             margin-right: 0.5em;
