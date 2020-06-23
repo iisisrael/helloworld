@@ -63,13 +63,13 @@ function Header(props)
                     <Row>
                         <Col className='text-left'>
                             <Tabs defaultActiveKey='linkedin-tab' id='contact-tabs'>
-                                <Tab eventKey='linkedin-tab' title={<FontAwesomeIcon icon={faLinkedin} />}>
+                                <Tab tabClassName="text-primary" eventKey='linkedin-tab' title={<FontAwesomeIcon icon={faLinkedin} />}>
                                     <Contact url='https://www.linkedin.com/in/israelcarberry' />
                                 </Tab>
-                                <Tab eventKey='phone-tab' title={<FontAwesomeIcon icon={faMobile} />}>
+                                <Tab tabClassName="text-primary" eventKey='phone-tab' title={<FontAwesomeIcon icon={faMobile} />}>
                                     <Contact url='tel:+15122340382' text='512.234.0382' />
                                 </Tab>
-                                <Tab eventKey='address-tab' title={<FontAwesomeIcon icon={faEnvelope} />}>
+                                <Tab tabClassName="text-primary" eventKey='address-tab' title={<FontAwesomeIcon icon={faEnvelope} />}>
                                     <Contact url='https://goo.gl/maps/8W5WZ4xxofz9Js8L7' text='1025 2nd St, Hempstead, Texas 77445' />
                                 </Tab>
                             </Tabs>
