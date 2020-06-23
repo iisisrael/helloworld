@@ -4,6 +4,8 @@ import './index.scss';
 import Container from 'react-bootstrap/Container';
 import Header from './components/header/header';
 import QueryString from 'query-string';
+import Row from 'react-bootstrap/Row';
+import Section from './components/section/section';
 import * as serviceWorker from './serviceWorker';
 
 function hasQueryArg(keyName)
@@ -22,6 +24,12 @@ ReactDOM.render(
     <React.StrictMode>
         <Container className={helloWorldContainerName()}>
             <Header print={hasQueryArg('print')} />
+            <Row>
+                <Section print={hasQueryArg('print')} id='current' />
+                <Section print={hasQueryArg('print')} id='previous' />
+                <Section print={hasQueryArg('print')} id='books' />
+                <Section print={hasQueryArg('print')} id='education' />
+            </Row>
         </Container>
     </React.StrictMode>,
     document.getElementById('root')
