@@ -1,9 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Header from './header';
 
-test('renders header stuff', () => {
-    const { getByText } = render(<Header />);
-    const mainHeader = getByText(/Israel J\. Carberry/i);
-    expect(mainHeader).toBeInTheDocument();
+describe('the header has stuff', () => {
+    test('a main header tag exists', () => {
+        render(<Header />);
+
+        // the <header> tag has the banner aria role by default
+        expect(screen.getByRole('banner')).toBeInTheDocument();
+    });
 });
