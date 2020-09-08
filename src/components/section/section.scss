@@ -5,18 +5,17 @@
 @import '~bootstrap/scss/mixins/_breakpoints';
 @import '~bootstrap/scss/mixins/_grid';
 
-// common to web and print sections
-.section, .section-print {
+.section {
     @include make-col-ready();
     @include make-col(12);
 
     padding-top: $grid-gutter-width / 2;
     padding-bottom: $grid-gutter-width / 2;
-}
 
-// web only sections
-.section {
-    @include media-breakpoint-up(md) {
-        @include make-col(6);
+    // web only sections
+    @media screen {
+        @include media-breakpoint-up(md) {
+            @include make-col(6);
+        }
     }
 }
