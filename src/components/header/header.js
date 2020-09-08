@@ -10,7 +10,7 @@ import Tabs from 'react-bootstrap/Tabs';
 function Avatar(props)
 {
     return (
-        <img className='avatar'
+        <img className='avatar mt-3'
             src={props.url}
             alt={props.text}
         />
