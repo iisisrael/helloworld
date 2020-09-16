@@ -55,3 +55,8 @@ a {
     top: $grid-gutter-width / 2;
     right: $grid-gutter-width / 2;
 }
+
+@page {
+    size: auto;
+    margin: .5in;
+}

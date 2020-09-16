@@ -12,6 +12,8 @@ import * as serviceWorker from './serviceWorker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
 
+// note that ReactToPrint causes a deprecation warning on use of findDOMNode
+// but this can be ignored - see https://github.com/gregnb/react-to-print/issues/282
 class PrintableContainer extends React.Component
 {
     render() {
@@ -20,24 +22,27 @@ class PrintableContainer extends React.Component
                 <ReactToPrint
                     trigger={() => <Button type='button' variant='link' id='print-me'><FontAwesomeIcon icon={faPrint} /></Button>}
                     content={() => this.componentRef}
-                    onBeforeGetContent={() =>
-                        {
+                    onBeforeGetContent={() => {
+                        return new Promise((resolve) => {
+
                             // update the content state to be printable
-                            return new Promise((resolve) => {
-                                this.componentRef.setState(state => ({toPrint: true}));
-                                resolve(this.componentRef);
-                            });
-                        }
-                    }
-                    onBeforePrint={() =>
-                        {
+                            this.componentRef.setState(state => ({toPrint: true}));
+                            resolve(this.componentRef);
+                        });
+                    }}
+                    onBeforePrint={() => {
+                        return new Promise((resolve) => {
+
+                            // resize the print window
+                            let printWindow = document.getElementById('printWindow');
+                            printWindow.style.width = '1440px';
+                            printWindow.style.height = '1000px';
+
                             // return the content state to web view
-                            return new Promise((resolve) => {
-                                this.componentRef.setState(state => ({toPrint: false}));
-                                resolve(this.componentRef);
-                            });
-                        }
-                    }
+                            this.componentRef.setState(state => ({toPrint: false}));
+                            resolve(this.componentRef);
+                        });
+                    }}
                     bodyClass='helloworld-print'
                 />
                 <PrintableContent ref={el => (this.componentRef = el)} />
