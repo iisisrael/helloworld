@@ -1,16 +1,16 @@
 {
-  "extends": ["react-app", "plugin:prettier/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
   "settings": {
     "react": {
-        "version": "detect"
+      "version": "detect"
     }
-},
-"env": {
+  },
+  "env": {
     "browser": true,
     "node": true,
     "es6": true
-},
-"plugins": [
+  },
+  "plugins": [
     "react"
-]
+  ]
 }
