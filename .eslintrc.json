@@ -8,9 +8,14 @@
   "env": {
     "browser": true,
     "node": true,
+    "jest": true,
     "es6": true
   },
   "plugins": [
     "react"
-  ]
+  ],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  }
 }

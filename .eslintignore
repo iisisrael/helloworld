@@ -1,0 +1,2 @@
+# eslint automatically ignores node_modules and dot files / folders
+/build/*
